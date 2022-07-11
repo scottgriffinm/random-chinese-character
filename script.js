@@ -153,7 +153,6 @@ const jsonData = {
     "\u5229": "gains, advantage, profit, merit",
     "\u4ec0": "file of ten soldiers; mixed, miscellaneous",
     "\u4e8c": "two; twice",
-    "\u7b49": null,
     "\u4ea7": "give birth, bring forth, produce",
     "\u6216": "or, either, else; perhaps, maybe",
     "\u65b0": "new, recent, fresh, modern",
@@ -373,7 +372,6 @@ const jsonData = {
     "\u5931": "lose; make mistake, neglect",
     "\u8f6c": "shift, move, turn",
     "\u592b": "man, male adult, husband; those",
-    "\u4ee4": null,
     "\u51c6": "approve, allow, permit; in accord",
     "\u5e03": "cotton cloth, textiles, linen",
     "\u59cb": "begin, start; then, only then",
@@ -466,7 +464,6 @@ const jsonData = {
     "\u5e7f": "wide, extensive, broad; rad. 53",
     "\u663e": "manifest, display; evident, clear",
     "\u5427": "emphatic final particle",
-    "\u963f": null,
     "\u674e": "plum; judge; surname",
     "\u6807": "mark, symbol, label, sign; stand the bole of a tree",
     "\u8c08": "talk; conversation; surname",
@@ -530,7 +527,6 @@ const jsonData = {
     "\u6d3e": "school of thought, sect, branch",
     "\u5b69": "baby, child; children",
     "\u9a8c": "test, examine, inspect; verify",
-    "\u8d23": null,
     "\u8425": "encampment, barracks; manage",
     "\u661f": "a star, planet; any point of light",
     "\u591f": "enough, adequate",
@@ -585,7 +581,6 @@ const jsonData = {
     "\u6740": "kill, slaughter, murder; hurt",
     "\u653b": "attack, assault; criticize",
     "\u7236": "father; KangXi radical 88",
-    "\u82cf": null,
     "\u5bc6": "dense, thick, close; intimate",
     "\u4f4e": "low; to lower, hang, bend, bow",
     "\u671d": "dynasty; morning",
@@ -645,7 +640,6 @@ const jsonData = {
     "\u9884": "prepare, arrange; in advance",
     "\u8c01": "who? whom? whose? anyone?",
     "\u76ca": "profit, benefit; advantage",
-    "\u9633": null,
     "\u82e5": "if, supposing, assuming; similar",
     "\u54ea": "which? where? how?",
     "\u5fae": "small, prefix micro-, trifling",
@@ -815,7 +809,6 @@ const jsonData = {
     "\u8d27": "goods, commodities, products",
     "\u4e92": "mutually, reciprocally",
     "\u4ed8": "give, deliver, pay, hand over; entrust",
-    "\u4f2f": null,
     "\u6162": "slow(ly), leisurely, sluggish",
     "\u6b27": "translit.: Europe; ohm; surname",
     "\u6362": "change",
@@ -981,23 +974,34 @@ const jsonData = {
     "\u501f": "borrow; lend; make pretext of",
     "\u541b": "sovereign, monarch, ruler, chief, prince",
     "\u7981": "restrict, prohibit, forbid",
-    "\u9634": null,
     "\u56ed": "garden; park, orchard",
     "\u8c0b": "plan, scheme; strategem",
     "\u5b8b": "Song dynasty; surname",
     "\u907f": "avoid; turn aside; escape; hide",
     "\u6293": "scratch; clutch, seize, grab",
     "\u8363": "glory, honor; flourish, prosper",
-    "\u59d1": null,
     "\u5b59": "grandchild, descendent; surname",
     "\u9003": "escape, flee; abscond, dodge",
     "\u7259": "tooth, molars, teeth; serrated",
     "\u675f": "bind, control, restrain; bale",
     "\u8df3": "jump, leap, vault, bounce; dance",
     "\u9876": "top, summit, peak; to carry on the head"
-}
-const values = Object.values(jsonData)
+};
 
-const randomValue = values[parseInt(Math.random() * values.length)]
+// Create array of object keys, ["311", "310", ...]
+const keys = Object.keys(jsonData);
 
-console.log(randomValue)
+// Generate random index based on number of keys
+const randIndex = Math.floor(Math.random() * keys.length);
+
+// Select a key from the array of keys using the random index
+const randKey = keys[randIndex];
+
+// Use the key to get the corresponding name from the "names" object
+const name = jsonData[randKey];
+
+const charTarget = document.getElementById("char");
+const defTarget = document.getElementById("def");
+
+charTarget.innerHTML = randKey;
+defTarget.innerHTML = name;
