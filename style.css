@@ -6,6 +6,13 @@
 
 
 h1 {
-  font-size:2em;
+  font-size:3em;
 }
 
+#def {
+  font-size:2.5em;
+}
+
+#char {
+  font-size:5em;
+}
