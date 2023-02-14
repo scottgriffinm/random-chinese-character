@@ -1,4 +1,4 @@
-# random-chinese-character
+# Random-chinese-character
 Generates a random chinese character (from a limited set).https://random-chinese-character.glitch.me/
 
 
